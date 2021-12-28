@@ -1,28 +1,52 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Eurosong festival app"/>
+    <!-- HOME -->
+    <Homepage 
+      v-if="page == 'home'"
+
+      @change-page="goToPage"
+    />
+    
+
+    <!-- GAME -->
+    <Gamepage 
+      v-if="page == 'game'"
+
+      @change-page="goToPage"
+    />
+
+    <!-- RANKING = Taak -->
+    <Rankingpage 
+      v-if="page == 'ranking'"
+
+      @change-page="goToPage"
+    />
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+//import of whole style for the app
+import style from "./SCSS/style.scss"
+import Homepage from "./pages/Homepage.vue"
+import Gamepage from "./pages/Gamepage.vue"
+import Rankingpage from "./pages/Rankingpage.vue"
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  components:{
+    Homepage,
+    Gamepage,
+    Rankingpage
+  },
+  data() {
+    return {
+      page: "home"
+    }
+  },
+  methods: {
+    goToPage(page) {
+      this.page = page;
+    }
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

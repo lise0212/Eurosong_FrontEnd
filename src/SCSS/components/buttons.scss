@@ -1,0 +1,16 @@
+button{
+    border: none;
+    border-radius: 7px;
+    font-size: $font-size-small;
+    padding: 10px 20px;
+    margin-left: 20px;
+    background-color: $primary-black;
+    color: $primary-white;
+
+    &:hover{
+        opacity: 0.8;
+        cursor: pointer;
+        background-color: $spotify-green;
+        color: $primary-black;
+    }
+}

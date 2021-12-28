@@ -1,0 +1,26 @@
+.c-nav{
+    background-color: $secondary-gray;
+    color: $primary-white;
+
+    .c-nav-list{
+        list-style: none;
+        display: flex;
+    }
+
+    .c-nav-list-item {
+        padding: 10px;  
+        margin-left: 20px;
+        text-align: center;
+        border: none;
+        background: none;
+        color: $primary-white;
+        font-size: $font-size-nav;
+        border-radius: 0px;
+        
+        &:hover{
+            background-color: $spotify-green;
+            cursor: pointer;
+            color: $primary-black;
+        }
+    }
+}
