@@ -1,0 +1,35 @@
+@mixin alerts($red, $green, $blue) {
+    background-color: rgba($red,$green,$blue,0.5);
+    margin-bottom: 10px;
+    border: 1px solid rgba($red,$green,$blue,1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.c-feedback{
+    &.warning{
+        @include alerts(255,165,80);
+    }
+
+    &.error{
+        @include alerts(255,0,0);
+    }
+
+    &.success{
+        @include alerts(0,255,0);
+    }
+}
+
+//aandere optie
+// .c-feedback.warning{
+//     @include alerts(255,165,80);
+// }
+
+// .c-feedback.error{
+//     @include alerts(255,0,0);
+// }
+
+// .c-feedback.success{
+//     @include alerts(0,255,0);
+// }
+
